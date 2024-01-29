@@ -1,0 +1,116 @@
+main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.certificate-metadata {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.certificate-buttons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.certificate {
+    width: 400px;
+    height: 350px;
+    background-color: var(--color-surface-200);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.certificate div p {
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+}
+
+.view-certificate-btn {
+    margin-top: auto;
+}
+
+.view-certificate-btn {
+    background-color: var(--color-surface-100);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+
+.download-certificate-link {
+    background-color: #2d5030;
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+
+.user-certificates {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    height: max-content;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.certificate-not-found {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificate-not-found p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary-text-color);
+}
+
+.certificate-not-found svg {
+    width: 100px;
+    height: 100px;
+    fill: var(--primary-text-color);
+}

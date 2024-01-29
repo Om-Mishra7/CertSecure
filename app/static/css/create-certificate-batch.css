@@ -1,0 +1,72 @@
+main {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.certificate-template-select-label {
+    font-size: 1.55rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.certificate-template-options {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    height: 100vh;
+    gap: 20px;
+}
+
+
+.certificate-template-option {
+    padding: 10px;
+    border: 1px solid var(--color-surface-300);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    background-color: var(--color-surface-200);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.certificate-template-option:hover {
+    background-color: var(--color-surface-200);
+    border: 1px solid var(--color-primary-100);
+}
+
+.certificate-template-option img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    filter: brightness(0.8);
+    margin-bottom: 10px;
+}
+
+.certificate-template-option p {
+    text-align: left;
+    width: 100%;
+    font-size: .9rem;
+}
+
+.certificate-template-option button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-primary-100);
+    border: none;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.certificate-template-option button:hover {
+    background-color: var(--color-primary-200);
+}

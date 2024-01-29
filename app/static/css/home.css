@@ -1,0 +1,720 @@
+/* Last Modified By: Om Mishra */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.animate-glowbar {
+    animation: animate-glowbar 2s ease-in-out forwards !important;
+}
+
+@keyframes animate-glowbar {
+    0% {
+        height: 0%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+
+.hero-section,
+.productivity-section,
+.decentralization-section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0px 50px 0px 50px;
+    gap: 20px;
+}
+
+.hero-section {
+    height: 120vh;
+    background-image: url(https://cdn.projectrexa.dedyn.io/certsecure/assets/homepage-background.png);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: 98% 40%;
+}
+
+.hero-setion-glowbar,
+.productivity-section-glowbar,
+.decentralization-section-glowbar {
+    width: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: -10 !important;
+}
+
+.hero-setion-glowbar {
+    justify-content: flex-end;
+}
+
+.productivity-section-glowbar,
+.decentralization-section-glowbar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50px;
+}
+
+.hero-setion-glowbar-line,
+.productivity-section-glowbar-line,
+.decentralization-section-glowbar-line {
+    width: 3px;
+    z-index: -1 !important;
+}
+
+.hero-setion-glowbar-line {
+    height: 70%;
+    background: linear-gradient(to bottom, transparent, var(--color-primary-100), transparent);
+}
+
+.productivity-section-glowbar-line,
+.decentralization-section-glowbar-line {
+    height: 0%;
+    background: linear-gradient(to bottom, transparent, var(--color-primary-100), transparent);
+}
+
+.decentralization-section-glowbar-lineP {
+    max-width: 99%;
+}
+
+.hero-setion-glowbar-line::before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: -30px;
+    left: -3px;
+    width: 8px;
+    height: 8px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid var(--color-surface-200);
+}
+
+.hero-section-primary,
+.productivity-section-primary,
+.decentralization-section-primary {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.hero-section-primary {
+    justify-content: center;
+    transform: translateY(-50px);
+    padding-top: 50px;
+}
+
+
+.hero-section-primary-content-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-section-primary-content-text-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--primary-text-color);
+}
+
+.hero-section-primary-content-text-description {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-surface-mixed-600);
+    width: 80%;
+}
+
+
+.hero-section-primary-content-text-buttons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 50px;
+    z-index: 100;
+}
+
+.hero-setion-glowbar-line-svg-container,
+.productivity-section-glowbar-line-svg-container,
+.decentralization-section-glowbar-line-svg-container {
+    position: relative;
+    left: -60px;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--color-surface-100) !important;
+    opacity: 1 !important;
+    z-index: 10 !important;
+}
+
+
+.productivity-section-glowbar-line-svg-container {
+    left: -37px;
+}
+
+.decentralization-section-glowbar-line-svg-container {
+    height: 45px;
+    width: 45px;
+    left: -40px;
+}
+
+.hero-setion-glowbar-line-svg,
+.productivity-section-glowbar-line-svg,
+.decentralization-section-glowbar-line-svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--primary-text-color);
+}
+
+.hero-setion-glowbar-line-svg,
+.productivity-section-glowbar-line-svg,
+.decentralization-section-glowbar-line-svg {
+    filter: drop-shadow(0px 0px 20px var(--color-primary-100));
+}
+
+
+.hero-section-primary-content-text-button,
+.hero-section-primary-content-text-button-primary {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--color-surface-300);
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-60px);
+}
+
+.hero-section-primary-content-text-button:hover,
+.hero-section-primary-content-text-button-primary:hover {
+    background-color: var(--color-surface-200);
+    border: 1px solid var(--color-surface-200);
+}
+
+.hero-section-primary-content-text-button-primary {
+    background-color: var(--color-primary-100);
+    border: 1px solid var(--color-primary-200);
+    color: var(--secondary-text-color);
+}
+
+.hero-section-primary-content-text-button-primary:hover {
+    background-color: var(--color-primary-200);
+    border: 1px solid var(--color-primary-200);
+}
+
+.productivity-section-about-text,
+.decentralization-section-about-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+.productivity-section-about-text-title,
+.decentralization-section-about-text-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-primary-100);
+    transform: translateX(-40px);
+}
+
+.productivity-section-main-text,
+.decentralization-section-main-text {
+    padding-left: 20px;
+}
+
+
+.productivity-section-main-text-description,
+.decentralization-section-main-text-description {
+    font-size: 2.3rem;
+    font-weight: 500;
+    max-width: 1000px;
+}
+
+.productivity-section-main-image {
+    width: 95vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+    transform: translateX(-40px);
+    position: relative;
+}
+
+.productivity-section-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--color-surface-300);
+}
+
+.productivity-section-secondary-image {
+    height: 100%;
+    width: 40%;
+    top: 60%;
+    right: 80px;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--color-surface-200);
+    border-radius: 10px;
+    border: 1px solid var(--color-surface-300);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.productivity-section-secondary-image-text {
+    width: 90%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+    color: var(--color-surface-mixed-600);
+}
+
+.highlighted-text-mobile-mockup {
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.productivity-section-secondary-image-download {
+    width: 90%;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.productivity-section-secondary-image-download-icon {
+    border-radius: 10px;
+    border: 1px solid var(--color-surface-300);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: max-content;
+    padding: 10px 20px 10px 20px;
+    fill: var(--color-primary-100);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.productivity-section-secondary-image-download-text {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--color-primary-100);
+}
+
+.productivity-section-secondary-image img {
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    bottom: 0;
+    border-radius: 0px;
+    border: none;
+    filter: drop-shadow(0px 0px 10px var(--color-surface-100));
+}
+
+
+.highlighted-text {
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 1.6rem;
+}
+
+.productivity-section-secondary-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    position: relative;
+    padding-bottom: 40vh;
+    padding-left: 20px;
+}
+
+.productivity-section-secondary-text-description {
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: 50%;
+    margin-top: 50px;
+    color: var(--color-surface-mixed-600);
+}
+
+.productivity-section-secondary-text-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary-100);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    fill: var(--color-primary-100);
+}
+
+.decentralization-section-image-container {
+    width: calc(100% + 60px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    left: -40px;
+    background-color: var(--color-surface-100);
+    box-shadow: 0px 0px 50px 50px var(--color-surface-100);
+}
+
+.decentralization-section-image-primary-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--color-surface-200);
+    border-radius: 10px;
+    border: 1px solid var(--color-surface-300);
+    gap: 20px;
+
+}
+
+.decentralization-section-secondary-image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.decentralization-section-image-primary-container dotlottie-player {
+    width: 50%;
+    height: 100%;
+}
+
+.decentralization-section-secondary-image-container dotlottie-player {
+    width: 50%;
+    height: 100%;
+    background-color: var(--color-surface-200);
+}
+
+
+.decentralization-section-image-primary-text {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 300px;
+    padding: 0px 20px 0px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+
+}
+
+.decentralization-section-image-primary-text-title {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--color-surface-mixed-600);
+    margin-top: 20px;
+}
+
+.highlighted-text-decentralization {
+    color: var(--primary-text-color);
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+
+.decentralization-section-image-primary-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary-100);
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    fill: var(--color-primary-100);
+    margin-top: auto;
+
+}
+
+.bottom-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 0px 20px 0px 0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.bottom-section-text {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.bottom-section-text-title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--primary-text-color);
+}
+
+.bottom-section-text-description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-surface-mixed-600);
+    width: 100%;
+}
+
+.cta-bottom-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-bottom-section-button {
+    width: max-content;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 10px;
+    padding: 15px 20px 15px 20px;
+    background-color: var(--color-surface-200);
+    border: 1px solid var(--color-surface-300);
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary-text-color);
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cta-bottom-section-button:hover {
+    background-color: var(--color-surface-300);
+    border: 1px solid var(--color-surface-300);
+}
+
+@media screen and (max-width: 768px) {
+
+    .hero-setion-glowbar {
+        height: 100%;
+        z-index: 0 !important;
+    }
+
+    .hero-setion-glowbar-line {
+        z-index: -1 !important;
+    }
+
+
+    .hero-section,
+    .productivity-section,
+    .decentralization-section {
+        padding: 0px 20px 0px 20px;
+        gap: 20px;
+    }
+
+    .hero-section {
+        background-position: top center;
+        background-image: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 1)), url(https://cdn.projectrexa.dedyn.io/certsecure/assets/homepage-background.png);
+        background-attachment: scroll;
+        background-repeat: no-repeat;
+        background-position: 98% 40%;
+    }
+
+    .hero-section-primary,
+    .productivity-section-primary,
+    .decentralization-section-primary {
+        gap: 20px;
+    }
+
+
+    .hero-section-primary-content-text {
+        gap: 20px;
+    }
+
+    .hero-section-primary-content-text-title {
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    .hero-section-primary-content-text-description {
+        font-size: 1rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .hero-section-primary-content-text-buttons {
+        gap: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .hero-section-primary-content-text-button {
+        transform: translateX(0px);
+    }
+
+    .productivity-section-glowbar,
+    .decentralization-section-glowbar {
+        left: 20px;
+    }
+
+
+    .productivity-section-about-text-title,
+    .productivity-section-main-text-description,
+    .decentralization-section-about-text-title,
+    .decentralization-section-main-text-description {
+        text-align: left;
+        font-size: 1.2rem;
+    }
+
+    .productivity-section-main-image {
+        transform: translateX(-30px);
+    }
+
+    .productivity-section-secondary-image {
+        width: 60%;
+        height: 140%;
+        top: -40px;
+        right: 20px;
+        position: absolute;
+    }
+
+    .highlighted-text {
+        font-size: 1.3rem;
+    }
+
+    .productivity-section-secondary-text-description {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .productivity-section-secondary-text-link {
+        font-size: 1rem;
+    }
+
+    .productivity-section-secondary-image-text {
+        display: none;
+    }
+
+
+    .productivity-section-secondary-image-download {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 20px;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .productivity-section-secondary-image {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    .decentralization-section-image-container {
+        padding: 0px 20px 0px 20px;
+    }
+
+    .decentralization-section-image-primary-container {
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    .decentralization-section-image-primary-container dotlottie-player {
+        width: 100%;
+        height: 100%;
+    }
+
+    .decentralization-section-image-primary-text {
+        gap: 20px;
+        padding: 0px 20px 30px 20px;
+    }
+
+    .highlighted-text-decentralization {
+        font-size: 1.1rem;
+    }
+
+    .decentralization-section-image-primary-text-title {
+        font-size: 1.1rem;
+    }
+
+    .decentralization-section-image-primary-link {
+        font-size: 1rem;
+    }

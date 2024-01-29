@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    --color-primary-100: #ffca7c;
+    --color-primary-200: #ffd08b;
+    --color-primary-300: #ffd699;
+    --color-primary-400: #ffdba8;
+    --color-primary-500: #ffe1b6;
+    --color-primary-600: #ffe7c4;
+
+    /** CSS DARK THEME SURFACE COLORS */
+    --color-surface-100: #121212;
+    --color-surface-200: #282828;
+    --color-surface-300: #3f3f3f;
+    --color-surface-400: #575757;
+    --color-surface-500: #717171;
+    --color-surface-600: #8b8b8b;
+
+    /** CSS DARK THEME MIXED SURFACE COLORS */
+    --color-surface-mixed-100: #191320;
+    --color-surface-mixed-200: #2e2835;
+    --color-surface-mixed-300: #453f4b;
+    --color-surface-mixed-400: #5c5862;
+    --color-surface-mixed-500: #75717a;
+    --color-surface-mixed-600: #8f8c93;
+
+    /** TEXT COLORS */
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #000000;
+
+}
+
+
+
+body {
+    background-color: var(--color-surface-100);
+    color: var(--primary-text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    scroll-behavior: smooth !important;
+}
+
+
+.grecaptcha-badge {
+    display: none;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--color-surface-100);
+    z-index: 100;
+}
+
+.loader-image {
+    max-width: 200px;
+    max-height: 200px;
+    filter: invert(100%);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+
+@keyframes glow {
+    from {
+        filter: invert(0%);
+    }
+
+    to {
+        filter: invert(50%);
+    }
+}
+
+.alert-container {
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.alert {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    padding: 10px;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    flex-direction: row;
+    position: fixed;
+    top: 20px;
+    display: none;
+    vertical-align: middle;
+    font-family: monospace !important;
+    animation: fade-in .5s ease-in-out forwards;
+}
+
+.alert-danger {
+    background-color: #503036;
+    color: #ff8d90 !important;
+}
+
+.alert-danger svg {
+    fill: #ff8d90 !important;
+}
+
+.alert-warning {
+    background-color: #42381d;
+    color: #d0b101 !important;
+}
+
+.alert-warning svg {
+    fill: #d0b101 !important;
+}
+
+.alert-success {
+    background-color: #2d5030;
+    color: #00ff00 !important;
+}
+
+.alert-success svg {
+    fill: #00ff00 !important;
+}
+
+.alert-info {
+    background-color: #2d3e50;
+    color: #00ffff !important;
+}
+
+.alert-info svg {
+    fill: #00ffff !important;
+}
+
+
+.alert-message {
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.alert-message a {
+    color: var(--color-primary-100);
+    text-decoration: underline;
+}
+
+.alert-message a::before {
+    content: '[';
+}
+
+.alert-message a::after {
+    content: ']';
+}
+
+.alert-close {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+}
+
+.alert-close svg {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+}
+
+
+.fade-in {
+    animation: fade-in .5s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    animation: fade-out .5s ease-in-out forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-border-color);
+}
+
+
+/* Remove tap highlight on elements */
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}

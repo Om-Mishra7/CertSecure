@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/static/css/create-certificate-batch.css" />
+    {% include 'frontend/partial/head.html' %}
+    <title>Create Certificate Batch | CertSecure</title>
+  </head>
+
+  <body>
+    {% include 'frontend/partial/loader.html' %} {% include
+    'frontend/partial/alerts.html' %}
+    <main>
+      {% include 'frontend/partial/top-navbar.html' %}
+
+      <div class="certificate-batch-create-container">
+        <div class="certificate-template-select">
+          <p class="certificate-template-select-label">
+            Choose a certificate template:
+          </p>
+          <div
+            id="certificate-template-options"
+            class="certificate-template-options"
+          >
+            {% for CERTIFICATE_TEMPLATE in CERTIFICATE_TEMPLATES %}
+            <div class="certificate-template-option">
+              <img
+                src="{{ CERTIFICATE_TEMPLATE['certificate_preview_url'] }}"
+                alt="{{ CERTIFICATE_TEMPLATE['certificate_name'] | title }}"
+              />
+              <p>
+                Name:
+                <span class="footer-highlighted-text"
+                  >{{ CERTIFICATE_TEMPLATE['certificate_name'] | title }}</span
+                >
+              </p>
+              <p>
+                Publisher:
+                <span class="footer-highlighted-text"
+                  >{{ CERTIFICATE_TEMPLATE['certificate_publisher'] | title
+                  }}</span
+                >
+              </p>
+              <p>
+                Type:
+                <span class="footer-highlighted-text"
+                  >{{ CERTIFICATE_TEMPLATE['certificate_type'] | title }}</span
+                >
+              </p>
+              <button
+                class="certificate-template-select-button"
+                onclick="selectCertificateTemplate(`{{ CERTIFICATE_TEMPLATE['_id'] }}`)"
+              >
+                Select
+              </button>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/static/js/create-certificate-batch.js"></script>
+    {% include 'frontend/partial/footer.html' %}
+  </body>
+</html>

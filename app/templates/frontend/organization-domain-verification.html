@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    {% include 'frontend/partial/head.html' %}
+    <title>Organization Domain Verification | CertSecure</title>
+    <link
+      rel="stylesheet"
+      href="/static/css/organization-domain-verification.css"
+    />
+  </head>
+  <body>
+    {% include 'frontend/partial/loader.html' %}
+     {% include'frontend/partial/alerts.html' %}
+
+    <main class="main-container">
+      {% include 'frontend/partial/top-navbar.html' %}
+      <div class="heading-container">
+        <h1>CertSecure Organization Domain Verification</h1>
+        <p>Verifying domain name <span class="domain-name">{{session.organization_domain_address}}</span></p>
+      </div>
+      <p>
+          To continue the sign-up process, please add the following TXT record
+          to the DNS settings of your domain {{session.organization_domain_address | lower}}. This step helps us to
+          ensure that you are the owner of the domain.
+        </p>
+        <br />
+      <div class="domain-verification-container">
+
+        <p class="domain-verification-record">
+          <div class="record-value-container">
+          <strong>Host Name:</strong> <span class="domain-name">certsecure-domain-verification</span
+          >
+          </div>
+          <div class="record-value-container">
+          <strong>Record Type:</strong> TXT
+          </div>
+          <div class="record-value-container">
+          <strong>Time to Live (TTL):</strong> 3600
+          </div>
+          <div class="record-value-container">
+          <strong>Value:</strong>
+          <span class="domain-verification-value">{{domain_verification_token}}
+          </span>
+          </div>
+        </p>
+      </div>
+      <div class="domain-verification-form-container">
+        <p>
+          Once you have added the TXT record to the DNS settings of your domain,
+          please click on the button below to verify the domain.
+        </p>
+        <br />
+        <form id="domain-verification-form">
+          <input
+            type="submit"
+            value="Verify Domain"
+            class="domain-verification-submit-btn"
+            id="domain-verification-submit-btn"
+          />
+        </form>
+        <br />
+        <p class="current-domain-verification-status">
+          <strong>Current Domain Verification Status:</strong>
+          <span
+            class="domain-verification-status"
+            id="domain-verification-status"
+            >Not Verified</span
+          >
+        </p>
+      </div>
+      <div class="domain-verification-warning-container">
+        <br />
+        <p class="domain-verification-warning">
+          Please note that it may take up to 24 hours for the DNS changes to
+          propagate, and for the domain to be verified. In case the domain is
+          not verified within 24 hours, please contact support. <br /><br />
+          Note, that these records will need to be present in the DNS records
+          of your domain, failing which you will be prompted to add the records
+          again.
+        </p>
+      </div>
+    </main>
+    <script src="/static/js/organization-domain-verification.js"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-surface-100);
+    gap: 10px;
+}
+
+.primary-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.primary-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-links a {
+    color: var(--primary-text-color);
+    font-size: 1rem;
+}
+
+.footer-link {
+    color: var(--primary-text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-surface-200);
+}
+
+.secondary-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.secondary-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .primary-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-logo img {
+        display: none;
+    }
+
+    .primary-links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .secondary-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .secondary-links {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}

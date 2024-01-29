@@ -1,0 +1,168 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 50px 0;
+    border: 0;
+}
+
+.signup-container {
+    width: 90%;
+    max-width: 600px;
+}
+
+.signup-form form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.signup-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-header h1 {
+    text-align: center;
+    width: 100%;
+    font-weight: 800;
+    font-size: 2rem;
+    padding-bottom: 20px;
+}
+
+.signup-form form input,
+.signup-form form select {
+    width: 100%;
+    padding: 15px 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    background-color: var(--color-surface-200);
+    color: var(--primary-text-color);
+    font-weight: 600;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid var(--color-surface-300);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.signup-form form select option {
+    background-color: var(--color-surface-200);
+    color: var(--primary-text-color);
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid var(--color-surface-200);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.signup-form form select {
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23ffffff' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 1 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.signup-form form input:focus {
+    outline: 1px solid var(--color-primary-100);
+}
+
+.dual-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 10px;
+}
+
+.signup-form form input[type="submit"] {
+    width: 100%;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--color-primary-100);
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.signup-form form input[type="submit"]:hover {
+    filter: brightness(.8);
+}
+
+.signup-form form button:hover {
+    background-color: var(--color-primary-200);
+    color: var(--primary-text-color);
+}
+
+.signup-footer {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.signup-footer p {
+    font-weight: 600;
+    text-align: center;
+}
+
+.signup-footer p a {
+    text-decoration: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: max-content;
+    color: var(--color-primary-100);
+}
+
+.signup-footer p a svg {
+    height: 15px;
+    width: 15px;
+    margin-top: 2px;
+    margin-left: 2px;
+    fill: var(--color-primary-100);
+}
+
+.signup-footer p a:hover {
+    color: var(--color-primary-200);
+}
+
+.signup-footer p a:hover svg {
+    fill: var(--color-primary-200);
+}
+
+@media screen and (max-width: 768px) {
+
+    .signup-header h1 {
+        width: 80%;
+    }
+
+    .signup-footer {
+        width: 90%;
+    }
+
+    .dual-input {
+        flex-direction: column;
+        gap: 0;
+    }
+}

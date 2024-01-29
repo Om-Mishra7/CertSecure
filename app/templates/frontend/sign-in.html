@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    {% include 'frontend/partial/head.html' %}
+    <title>Sign in | CertSecure</title>
+    <link rel="stylesheet" href="/static/css/sign-in.css" />
+  </head>
+  <body>
+    {% include 'frontend/partial/loader.html' %}{%
+    include'frontend/partial/alerts.html' %}
+
+    <main class="main-container">
+      {% include 'frontend/partial/top-navbar.html' %}
+      <div class="signin-header">
+        <h1>Sign in to CertSecure</h1>
+      </div>
+      <div class="signin-container">
+        <div class="signin-form">
+          <form id="signin-form">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email Address"
+              autocomplete="email"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+              placeholder="Password"
+            />
+            <a href="/forgot-password" class="forgot-password-link"
+              >Forgot Password?</a
+            >
+
+            <input type="submit" value="Sign in" id="signin-btn" />
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="/static/js/user-sign-in.js"></script>
+    {% include 'frontend/partial/footer.html' %}
+  </body>
+</html>

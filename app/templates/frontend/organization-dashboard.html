@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    {% include 'frontend/partial/head.html' %}
+    <title>Organization Dashboard | CertSecure</title>
+    <link rel="stylesheet" href="/static/css/organization-dashboard.css" />
+  </head>
+  <body>
+    {% include 'frontend/partial/loader.html' %}{%
+    include'frontend/partial/alerts.html' %}
+    <main class="main-container">
+      {% include 'frontend/partial/top-navbar.html' %}
+      <div class="certificate-id-verifier">
+        <form onsubmit="checkCertificate(event)">
+          <input
+            type="text"
+            id="certificate-id"
+            class="certificate-id"
+            placeholder="Enter Certificate ID"
+          />
+        </form>
+      </div>
+
+      <h2 class="certificates-issued-heading">
+        Certificates Issued by {{session['organizationName']}}
+      </h2>
+
+      <div class="certificate-cards">
+        {% for certificate in CERTIFICATES_ISSUED %}
+        <div class="certificate-card">
+          <p class="certificate-id">
+            Certificate ID - {{ certificate._id | upper}}
+          </p>
+          <p class="issued-to">
+            Issued to - {{ certificate.certificate_published_to_name }}
+          </p>
+          <br />
+          <p class="issued-by">
+            Issued by - {{ certificate.certificate_published_by_organization }}
+          </p>
+          <p class="issued-status">
+            Status - {{ certificate.certificate_publsihing_status | title }}
+          </p>
+          <br />
+          <button
+            class="view-certificate-btn"
+            style="
+              padding: 15px 20px;
+              background-color: #121212;
+              color: #fff;
+              border: none;
+              cursor: pointer;
+              border-radius: 5px;
+              font-size: 0.9rem;
+              font-weight: 600;
+            "
+            onclick="window.open('/certificate/{{ certificate._id }}')"
+          >
+            View Certificate
+          </button>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+    <script src="/static/js/organization-dashboard.js"></script>
+    {% include 'frontend/partial/footer.html' %}
+  </body>
+</html>

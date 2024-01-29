@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link rel="stylesheet" href="/static/css/create-certificate.css" />
+    {% include 'frontend/partial/head.html' %}
+    <title>Create Certificate | CertSecure</title>
+  </head>
+  <body>
+    {% include 'frontend/partial/loader.html' %} {% include
+    'frontend/partial/alerts.html' %}
+    <main>
+      {% include 'frontend/partial/top-navbar.html' %}
+      <div class="csv-uploader-container">
+        <div class="csv-uploader">
+          <div class="csv-uploader-description">
+            <p class="file-structure-information-title">
+              File Structure Information-
+            </p>
+            <p class="file-structure-information-description">
+              The file should be a .csv file with the following columns: {% for
+              field in template_details["certificate_fields"] %}
+              <span class="file-structure-information-description-field">
+                {{ template_details["certificate_fields"][field]["name"] }} {%
+                if loop.last == false %}, {% else %}.{% endif %}
+              </span>
+              {% endfor %} In case of a marks certificate, the sujects should
+              have their own columns with the subject name as the column name.
+            </p>
+          </div>
+          <div class="csv-uploader-primary-button">
+            <div class="csv-uploader-primary-button-body" id="csv-uploader">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24"
+                viewBox="0 -960 960 960"
+                width="24"
+              >
+                <path
+                  d="M260-160q-91 0-155.5-63T40-377q0-78 47-139t123-78q25-92 100-149t170-57q117 0 198.5 81.5T760-520q69 8 114.5 59.5T920-340q0 75-52.5 127.5T740-160H520q-33 0-56.5-23.5T440-240v-206l-64 62-56-56 160-160 160 160-56 56-64-62v206h220q42 0 71-29t29-71q0-42-29-71t-71-29h-60v-80q0-83-58.5-141.5T480-720q-83 0-141.5 58.5T280-520h-20q-58 0-99 41t-41 99q0 58 41 99t99 41h100v80H260Zm220-280Z"
+                />
+              </svg>
+              <label for="csv-file">Upload CSV File</label>
+              <input type="file" id="csv-file" accept=".csv" multiple="false" />
+            </div>
+            <p class="csv-uploader-secondary-description-text">
+              Upload the CSV file containing the data for the certificates, by
+              clicking on the button below or by dragging and dropping the file
+              in the box.
+            </p>
+          </div>
+        </div>
+      </div>
+      <table id="csv-data" class="csv-data"></table>
+      <div id="confirm-csv" class="confirm-csv">
+        <button id="confirm-csv-button" class="confirm-csv-button" onclick="confirmCSV()">
+          Generate Certificates
+      </div>
+    </main>
+    <script src="/static/js/create-certificate.js"></script>
+  </body>
+</html>

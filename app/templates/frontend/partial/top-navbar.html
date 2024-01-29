@@ -1,0 +1,149 @@
+<link rel="stylesheet" href="/static/css/top-navbar.css" />
+<div class="top-navbar" id="top-navbar">
+  <div class="top-navbar-logo">
+    <a href="/home">
+      <img
+        src="https://cdn.projectrexa.dedyn.io/certsecure/logo-dark.svg"
+        alt="CertSecure Logo"
+      />
+    </a>
+  </div>
+  <div class="top-navbar-promotional-links">
+    <div class="top-navbar-promotional-link">
+      <a href="/developer/docs">Docs</a>
+    </div>
+
+    <div class="top-navbar-promotional-link">
+      <a href="https://status.certsecure.projectrexa.dedyn.io/">Status</a>
+    </div>
+    {% if not session.loggedIn %}
+    <div class="top-navbar-promotional-link">
+      <a href="/pricing">Pricing</a>
+    </div>
+    {% endif %}
+  </div>
+  <div class="top-navbar-links">
+    {% if not session.loggedIn %} {% if url_for(request.endpoint) != "/sign-in"
+    %}
+    <div class="btn-top-navbar">
+      <a href="/sign-in">Sign In</a>
+    </div>
+    {% endif %} {% if url_for(request.endpoint) not in ["/sign-up",
+    "/organization/sign-up", "/user/sign-up"] %}
+    <div class="btn-top-navbar">
+      <a href="/sign-up">Sign up</a>
+    </div>
+    {% endif %} {% else %} {% if session.userRole == "user" %}
+    <div class="top-navbar-link">
+      <a href="/user/dashboard">Dashboard</a>
+    </div>
+    <div class="top-navbar-link">
+      <a href="/user/vault">Certicate Vault</a>
+    </div>
+    {% elif session.userRole == "organization" %}
+    <div class="top-navbar-link">
+      <a href="/organization/dashboard">Dashboard</a>
+    </div>
+    <div class="top-navbar-link">
+      <a href="/organization/issue/certificate">Issue Certificate</a>
+    </div>
+    {% endif %}
+    <div class="user-profile-navbar">
+      <div
+        class="user-profile-navbar-icon"
+        onclick="toggleProfileDropdown(event)"
+        id="profile-icon"
+      >
+        <img
+          src="https://api.dicebear.com/7.x/lorelei/png?flip=true&seed={{ session.userID }}"
+          alt="User Profile"
+        />
+      </div>
+      <div
+        class="user-profile-navbar-dropdown profile-closed"
+        id="profile-dropdown"
+      >
+        {% if session.userRole == "user" %}
+        <div class="user-profile-navbar-dropdown-item top-navbar-link">
+          <a href="/user/account">Account</a>
+        </div>
+        {% elif session.userRole == "organization" %}
+        <div class="user-profile-navbar-dropdown-item top-navbar-link">
+          <a href="/organization/account">Account</a>
+        </div>
+        {% endif %}
+        <div class="user-profile-navbar-dropdown-item top-navbar-link">
+          <a href="/sign-out">Sign Out</a>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+  <div class="top-navbar-hamburger">
+    <div
+      class="top-navbar-hamburger-icon"
+      id="hamburger-icon"
+      onclick="toggleHamburger()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 -960 960 960"
+        width="24"
+      >
+        <path
+          d="M140.001-254.616v-59.999h679.998v59.999H140.001Zm0-195.385v-59.998h679.998v59.998H140.001Zm0-195.384v-59.999h679.998v59.999H140.001Z"
+        />
+      </svg>
+    </div>
+    <div class="hamburger-menu closed" id="hamburger-menu">
+      <div class="hamburger-menu-item">
+        <a href="/developer/docs">Docs</a>
+      </div>
+
+      <div class="hamburger-menu-item">
+        <a href="https://status.certsecure.projectrexa.dedyn.io/">Status</a>
+      </div>
+      {% if not session.loggedIn %}
+      <div class="hamburger-menu-item">
+        <a href="/pricing">Pricing</a>
+      </div>
+      {% endif %} {% if not session.loggedIn %} {% if url_for(request.endpoint)
+      != "/sign-in" %}
+      <div class="hamburger-menu-item-button">
+        <a href="/sign-in">Sign In</a>
+      </div>
+      {% endif %} {% if url_for(request.endpoint) not in ["/sign-up",
+      "/organization/sign-up", "/user/sign-up"] %}
+      <div class="hamburger-menu-item-button">
+        <a href="/sign-up">Sign up</a>
+      </div>
+      {% endif %} {% else %} {% if session.userRole == "user" %}
+      <div class="hamburger-menu-item">
+        <a href="/user/dashboard">Dashboard</a>
+      </div>
+      <div class="hamburger-menu-item">
+        <a href="/user/vault">Certicate Vault</a>
+      </div>
+      <div class="hamburger-menu-item">
+        <a href="/user/account">Account</a>
+      </div>
+      {% elif session.userRole == "organization" %}
+      <div class="hamburger-menu-item">
+        <a href="/organization/dashboard">Dashboard</a>
+      </div>
+      <div class="hamburger-menu-item">
+        <a href="/organization/issue/certificate">Issue Certificate</a>
+      </div>
+      <div class="hamburger-menu-item">
+        <a href="/organization/account">Account</a>
+      </div>
+
+      {% endif %}
+      <div class="hamburger-menu-item">
+        <a href="/sign-out">Sign Out</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

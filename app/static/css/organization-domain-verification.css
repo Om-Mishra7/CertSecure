@@ -1,0 +1,70 @@
+main {
+    padding: 0 20px !important;
+    margin-bottom: 50px;
+}
+
+.heading-container {
+    margin-bottom: 50px;
+}
+
+.heading-container h1 {
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.heading-container p {
+    font-size: .8rem;
+    padding: 0 5px;
+    margin-top: 5px;
+}
+
+.domain-verification-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+    background-color: var(--color-surface-200);
+    padding: 20px;
+    border-radius: 6px;
+    overflow-wrap: break-word;
+}
+
+.domain-verification-record {
+    font-size: .9rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.domain-name,
+.domain-verification-value {
+    text-transform: uppercase;
+}
+
+.domain-verification-submit-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    width: max-content;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: var(--color-primary-100);
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    border: none;
+}
+
+
+.domain-verification-submit-btn:hover {
+    background-color: var(--color-primary-200);
+}
+
+.domain-verification-status {
+    font-size: 1em;
+}
+
+.domain-verification-warning {
+    font-size: .8rem;
+    color: var(--primary-text-color);
+}

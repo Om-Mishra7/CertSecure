@@ -1,0 +1,271 @@
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-surface-100);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 100;
+}
+
+.top-navbar-scrolled {
+    border-bottom: 1px solid var(--color-surface-200);
+    background-color: var(--color-surface-100);
+    transition: all 0.2s fade-in-out;
+}
+
+.top-navbar .top-navbar-logo a img {
+    width: auto;
+    height: 45px;
+    padding-top: 5px;
+}
+
+.top-navbar-links {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.top-navbar-promotional-links {
+    margin-left: 40px;
+}
+
+.top-navbar-promotional-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-navbar-promotional-links a,
+.top-navbar-link a {
+    color: var(--primary-text-color);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.top-navbar-promotional-links a:hover,
+.top-navbar-link a:hover {
+    color: var(--color-primary-100) !important;
+}
+
+.top-navbar-promotional-links a:before,
+.top-navbar-link a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-100);
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+    transform-origin: 0 0;
+}
+
+.top-navbar-promotional-links a:hover:before,
+.top-navbar-link a:hover:before {
+    width: 100%;
+    transform-origin: 100% 0;
+}
+
+.top-navbar .top-navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    gap: 20px;
+}
+
+.top-navbar .top-navbar-links a {
+    color: var(--color-on-surface-100);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.btn-top-navbar {
+    color: var(--primary-text-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-surface-300);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-top-navbar:hover {
+    background-color: var(--color-surface-200);
+}
+
+.btn-top-navbar:last-child {
+    color: var(--secondary-text-color);
+    border: none !important;
+    background-color: var(--color-primary-100);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.btn-top-navbar:last-child:hover {
+    background-color: var(--color-primary-200) !important;
+}
+
+
+.alert {
+    top: 90px;
+}
+
+.top-navbar-hamburger {
+    display: block;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.top-navbar-hamburger-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--primary-text-color);
+}
+
+
+.hamburger-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 10;
+    background-color: var(--color-surface-100);
+    padding: 20px;
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.hamburger-menu-item:last-of-type a {
+    border-bottom: none;
+}
+
+.hamburger-menu-item a {
+    width: 100%;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-surface-200);
+    padding: 20px 0;
+    font-weight: 500;
+}
+
+
+.hamburger-menu-item-button {
+    width: 100%;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--color-surface-300);
+    padding: 20px 0;
+    font-weight: 500;
+    background-color: var(--color-surface-200);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.hamburger-menu-item-button a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
+
+
+.hamburger-menu-item-button:last-of-type {
+    background-color: var(--color-primary-100);
+    border: 1px solid var(--color-primary-200);
+}
+
+.hamburger-menu-item-button:last-of-type a {
+    color: var(--secondary-text-color);
+}
+
+.closed {
+    display: none !important;
+
+}
+
+.user-profile-navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.user-profile-navbar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--color-surface-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile-navbar-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.user-profile-navbar-dropdown {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: var(--color-surface-100);
+    border-radius: 5px;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    display: flex;
+    z-index: 100;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-closed {
+    display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+    .top-navbar-hamburger {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .top-navbar-links {
+        display: none !important;
+    }
+
+    .top-navbar-promotional-link {
+        display: none !important;
+    }
+
+
+}
