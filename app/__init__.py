@@ -551,7 +551,7 @@ def api_sign_in():
             )
 
         session["loggedIn"] = True
-        session["userID"] = organization.get("_id")
+        session["userID"] = str(organization.get("_id"))
         session["userRole"] = organization.get("role")
         session["organizationName"] = organization.get("name")
         session["organizationEmail"] = organization.get("email")
