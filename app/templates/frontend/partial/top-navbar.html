@@ -9,17 +9,12 @@
     </a>
   </div>
   <div class="top-navbar-promotional-links">
-    <div class="top-navbar-promotional-link">
-      <a href="/developer/docs">Docs</a>
-    </div>
 
     <div class="top-navbar-promotional-link">
       <a href="https://status.certsecure.projectrexa.dedyn.io/">Status</a>
     </div>
     {% if not session.loggedIn %}
-    <div class="top-navbar-promotional-link">
-      <a href="/pricing">Pricing</a>
-    </div>
+
     {% endif %}
   </div>
   <div class="top-navbar-links">
@@ -98,16 +93,10 @@
     </div>
     <div class="hamburger-menu closed" id="hamburger-menu">
       <div class="hamburger-menu-item">
-        <a href="/developer/docs">Docs</a>
-      </div>
-
-      <div class="hamburger-menu-item">
         <a href="https://status.certsecure.projectrexa.dedyn.io/">Status</a>
       </div>
       {% if not session.loggedIn %}
-      <div class="hamburger-menu-item">
-        <a href="/pricing">Pricing</a>
-      </div>
+
       {% endif %} {% if not session.loggedIn %} {% if url_for(request.endpoint)
       != "/sign-in" %}
       <div class="hamburger-menu-item-button">

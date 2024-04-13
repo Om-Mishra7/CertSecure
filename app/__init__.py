@@ -1339,7 +1339,9 @@ def api_create_certificates():
                 certificate_data.get("recipient_email_id"),
                 "certificate-issued",
                 str(inserted_record.inserted_id).replace('"', "").replace("\n", ""),
-            )
+            )        
+
+            response = requests.post(f"https://api-certsecure.om-mishra.com/add-certificate/{str(inserted_record.inserted_id)}")
 
         return (
             jsonify(
@@ -1942,65 +1944,6 @@ def certificate(certificate_id):
     )
 
 
-@app.route("/certificate/blockchain/<certificate_id>", methods=["GET"])
-@limiter.exempt
-def certificate_blockchain(certificate_id):
-    try:
-        # Convert ObjectId to string
-
-        certificate_id = MONGODB_DATABASE.CERTIFICATES.find_one(
-            {"_id": bson.ObjectId(certificate_id)}
-        ).get("_id")
-
-        id_str = str(certificate_id)
-
-        # Call the contract function with the string id
-        encrypted_data_tuple = certsecure_contract.functions.getCertificateData(
-            id_str
-        ).call()
-
-        # Extract the ID and JSON data from the tuple
-        certificate_id, encrypted_data_str = encrypted_data_tuple
-
-        # Convert the string to bytes
-        encrypted_data = encrypted_data_str.encode("utf-8")
-
-        # Rest of the code remains the same
-        with open("app/encryption_key.txt", "r") as f:
-            encryption_key = f.read().encode("utf-8")
-
-        # Create a Fernet cipher suite with the given encryption key
-        cipher_suite = Fernet(encryption_key)  # Ensure encryption_key is bytes
-
-        # Decrypt the data
-        decrypted_data_bytes = cipher_suite.decrypt(encrypted_data)
-
-        # Convert the decrypted data back to a JSON object
-
-        json_data = json.loads(decrypted_data_bytes.decode("utf-8"))
-
-        json_data = json.loads(json_data)
-
-        CERTIFICATE_TEMPLATE = MONGODB_DATABASE.CERTIFICATE_TEMPLATES.find_one(
-            {"_id": bson.ObjectId(json_data["certificate_template_id"])}
-        )
-
-        return render_template_string(
-            CERTIFICATE_TEMPLATE["certificate_template"], CERTIFICATE=json_data
-        )
-
-    except Exception as e:
-        print(e)
-        return (
-            jsonify(
-                {
-                    "message": "Invalid certificate ID, please check the link and try again",
-                    "status": "error",
-                }
-            ),
-            400,
-        )
-
 
 # Two factor authentication routes
 
@@ -2052,7 +1995,6 @@ def user_dashboard():
     USER_CERTIFICATES = MONGODB_DATABASE.CERTIFICATES.find(
         {"certificate_published_to_email": session.get("userEmail")}
     )
-    print(session.get("userEmail"))
     return (
         render_template(
             "frontend/user-dashboard.html", USER_CERTIFICATES=list(USER_CERTIFICATES)

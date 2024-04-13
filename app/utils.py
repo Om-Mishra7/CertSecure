@@ -117,6 +117,7 @@ def send_email(api_key, email_address, type, token=None):
 
     try:
         api_response = api_instance.send_transac_email(send_smtp_email)
+        print("Email sent successfully. Email ID: %s" % api_response.message_id)
         return True
     except ApiException as e:
         print("Exception when calling SMTPApi->send_transac_email: %s\n" % e)
