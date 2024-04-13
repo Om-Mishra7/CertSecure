@@ -342,7 +342,7 @@ def api_sign_in():
             )
 
         session["loggedIn"] = True
-        session["userID"] = user.get(str("_id"))
+        session["userID"] = str(user.get(("_id")))
         session["userRole"] = user.get("role")
         session["userEmail"] = user.get("email")
         session["userTwoFactorAuthenticationEnabled"] = user.get(
