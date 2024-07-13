@@ -20,7 +20,7 @@ We welcome and encourage small contributions from the community to improve and e
 
 ### Reporting Issues
 
-If you encounter any bugs, issues, or have suggestions for improvements, please [create a new issue](https://github.com/your-repository/issues) on our GitHub repository. Provide detailed information about the problem or enhancement you are suggesting.
+If you encounter any bugs, issues, or have suggestions for improvements, please create a new issue on our GitHub repository. Provide detailed information about the problem or enhancement you are suggesting.
 
 ### Making Code Contributions
 
