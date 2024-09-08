@@ -1334,12 +1334,14 @@ def api_create_certificates():
                 certificate_metadata
             )
 
-            send_email(
+            print(APP_CONFIG["SENDINBLUE_API_KEY"])
+
+            print(send_email(
                 APP_CONFIG["SENDINBLUE_API_KEY"],
                 certificate_data.get("recipient_email_id"),
                 "certificate-issued",
                 str(inserted_record.inserted_id).replace('"', "").replace("\n", ""),
-            )        
+            ))   
 
             response = requests.post(f"https://api-certsecure.om-mishra.com/add-certificate/{str(inserted_record.inserted_id)}")
 
@@ -2186,6 +2188,8 @@ def api_csv_to_json():
                 ),
                 400,
             )
+        
+        print(csv_dict.get("columns"), certificate_details.get("certificate_fields"))
 
         for field_detail in certificate_details.get("certificate_fields"):
             if (

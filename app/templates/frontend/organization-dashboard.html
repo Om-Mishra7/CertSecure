@@ -23,50 +23,47 @@
             class="certificate-id"
             placeholder="Enter Certificate ID"
           />
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
         </form>
       </div>
 
       <h2 class="certificates-issued-heading">
-        Certificates Issued by {{session['organizationName']}}
+        Certificates Issued by {{session['organizationName']}} Organization
       </h2>
 
 
-      <div class="certificate-cards">
-        {% for certificate in CERTIFICATES_ISSUED %}
-        <div class="certificate-card">
-          <p class="certificate-id">
-            Certificate ID - {{ certificate._id | upper}}
-          </p>
-          <p class="issued-to">
-            Issued to - {{ certificate.certificate_published_to_name }}
-          </p>
-          <br />
-          <p class="issued-by">
-            Issued by - {{ certificate.certificate_published_by_organization }}
-          </p>
-          <p class="issued-status">
-            Status - {{ certificate.certificate_publsihing_status | title }}
-          </p>
-          <br />
-          <button
-            class="view-certificate-btn"
-            style="
-              padding: 15px 20px;
-              background-color: #121212;
-              color: #fff;
-              border: none;
-              cursor: pointer;
-              border-radius: 5px;
-              font-size: 0.9rem;
-              font-weight: 600;
-            "
-            onclick="window.open('/certificate/{{ certificate._id }}')"
-          >
-            View Certificate
-          </button>
-        </div>
-        {% endfor %}
-      </div>
+      <div class="certificate-table-container">
+        <table class="certificate-table">
+            <thead>
+                <tr>
+                    <th>Certificate ID</th>
+                    <th>Issued To</th>
+                    <th>Issued By</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for certificate in CERTIFICATES_ISSUED %}
+                <tr>
+                    <td>{{ certificate._id | upper }}</td>
+                    <td>{{ certificate.certificate_published_to_name }}</td>
+                    <td>{{ certificate.certificate_published_by_organization }}</td>
+                    <td>{{ certificate.certificate_publsihing_status | title }}</td>
+                    <td>
+                        <button
+                            class="view-certificate-btn"
+                            onclick="window.open('/certificate/{{ certificate._id }}')"
+                        >
+                            View Certificate
+                        </button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
     </main>
     <script src="/static/js/organization-dashboard.js"></script>
     {% include 'frontend/partial/footer.html' %}

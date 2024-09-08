@@ -11,7 +11,7 @@ from flask import Flask, request, jsonify
 
 load_dotenv()
 
-CLIENT = MongoClient(os.environ.get("MONGODB_URI"))
+CLIENT = MongoClient(os.environ.get("MONGODB_HOST"))
 DATABASE = CLIENT["CERTSECURE-DATABASE"]
 
 
@@ -25,8 +25,8 @@ class CustomJSONEncoder(json.JSONEncoder):
 
 
 # Define the hive.io credentials
-posting_key = os.environ.get("HIVE_POSTING_KEY")
-account_name = os.environ.get("HIVE_ACCOUNT_NAME")
+posting_key = "5JjUc7vW3GQL3KyLEUqEsLsSUjnYfYUfHGDb73HwHh2U2U1yCcq"
+account_name = "ommishra7"
 
 # Connect to the Hive blockchain
 steem = Steem(keys=[posting_key])
